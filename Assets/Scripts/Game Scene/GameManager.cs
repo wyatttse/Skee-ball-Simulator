@@ -4,26 +4,27 @@ using UnityEngine.EventSystems;
 public class GameManager : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 {
     public EnergyBar energyBar;
-    public Ball ball;
+    public GameObject BallPrefab;
     private Vector3 worldPosition;
 
     public void OnPointerDown(PointerEventData eventData) {
-        if (ball.isThrown)
+        if (Ball.isThrown)
             return;
 
         var cam = Camera.main;
         Vector3 touchPosition = eventData.position;
-        touchPosition.z = cam.nearClipPlane + 2;
+        touchPosition.z = cam.nearClipPlane + 1;
         worldPosition = cam.ScreenToWorldPoint(touchPosition);
 
         energyBar.ChargeEnergy();
     }
 
     public void OnPointerUp(PointerEventData eventData) {
-        if (ball.isThrown)
+        if (Ball.isThrown)
             return;
 
         var energy = energyBar.Release();
+        var ball = Instantiate(BallPrefab).GetComponent<Ball>();
         ball.SetUp(worldPosition, energy);
     }
 }
