@@ -2,8 +2,11 @@
 
 public class Ball : MonoBehaviour
 {
-    private readonly float maxDistance = 20f;
     public bool isThrown { get; private set; }
+
+    private readonly float maxDistance = 20f;
+    private readonly float maxTime = 5f;
+    private float timePassed;
 
     public void SetUp(Vector3 position, float energy) {
         gameObject.SetActive(true);
@@ -17,10 +20,12 @@ public class Ball : MonoBehaviour
         rigitBody.velocity = new Vector3(0, energy * Mathf.Sin(Mathf.PI / 6), energy * Mathf.Cos(Mathf.PI / 6));
     }
 
-    // Update is called once per frame
-    void Update() {
+    private void FixedUpdate() {
+        timePassed += Time.fixedDeltaTime;
+
         var camPosition = Camera.main.transform.position;
-        if (Vector3.Distance(camPosition, transform.position) > maxDistance) {
+        if (Vector3.Distance(camPosition, transform.position) > maxDistance || timePassed >= maxTime) {
+            timePassed = 0f;
             isThrown = false;
             GetComponent<MeshRenderer>().enabled = false;
             gameObject.SetActive(false);
