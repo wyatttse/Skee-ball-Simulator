@@ -2,15 +2,13 @@
 
 public class Ball : MonoBehaviour
 {
-    public bool isThrown { get; private set; }
+    public static bool isThrown { get; private set; }
 
     private readonly float maxDistance = 20f;
     private readonly float maxTime = 5f;
     private float timePassed;
 
     public void SetUp(Vector3 position, float energy) {
-        gameObject.SetActive(true);
-        GetComponent<MeshRenderer>().enabled = true;
         isThrown = true;
 
         transform.position = position;
@@ -25,10 +23,8 @@ public class Ball : MonoBehaviour
 
         var camPosition = Camera.main.transform.position;
         if (Vector3.Distance(camPosition, transform.position) > maxDistance || timePassed >= maxTime) {
-            timePassed = 0f;
             isThrown = false;
-            GetComponent<MeshRenderer>().enabled = false;
-            gameObject.SetActive(false);
+            Destroy(gameObject);
         }
     }
 }
