@@ -1,6 +1,8 @@
 ﻿using UnityEngine;
 
 public class SceneFade: MonoBehaviour {
+
+
     public void LoadScene(string sceneName) {
         StartCoroutine(LoadSceneCoroutine());
 

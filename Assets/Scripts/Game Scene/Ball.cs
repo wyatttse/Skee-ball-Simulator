@@ -6,7 +6,7 @@ public class Ball : MonoBehaviour
 
     private readonly float maxDistance = 20f;
     private readonly float maxTime = 5f;
-    private float timePassed = 0;
+    private float timePassed;
 
     public void SetUp(Vector3 position, float energy) {
         isThrown = true;

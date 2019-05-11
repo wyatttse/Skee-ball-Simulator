@@ -18,18 +18,14 @@ public class EnergyBar : MonoBehaviour
                 var deltaTime = Time.deltaTime;
 
                 if (!isMax) {
-                    if (totalTime + deltaTime > maxTime) {
-                        deltaTime = maxTime - totalTime;
+                    if (totalTime + deltaTime > maxTime)
                         isMax = true;
-                    }
 
                     totalTime += deltaTime;
                 }
                 else {
-                    if (totalTime - deltaTime < 0) {
-                        deltaTime = totalTime;
+                    if (totalTime - deltaTime < 0) 
                         isMax = false;
-                    }
 
                     totalTime -= deltaTime;
                 }
