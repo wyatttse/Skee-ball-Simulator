@@ -2,10 +2,8 @@
 
 public class EnergyBar : MonoBehaviour
 {
-    public bool isCharging;
-
-    private static readonly float maxEnergy = 200f;
-    private static readonly float maxTime = 1f;
+    private readonly float maxEnergy = 20f;
+    private readonly float maxTime = 1f;
     private Coroutine oldCoroutine;
     private float energy;
 
@@ -39,7 +37,7 @@ public class EnergyBar : MonoBehaviour
                 energy = maxEnergy * totalTime / maxTime;
 
                 var rectTransform = GetComponent<RectTransform>();
-                rectTransform.sizeDelta = new Vector2(energy, rectTransform.sizeDelta.y);
+                rectTransform.sizeDelta = new Vector2(energy * 10, rectTransform.sizeDelta.y);
 
                 yield return new WaitForSeconds(deltaTime);
             }
@@ -52,6 +50,11 @@ public class EnergyBar : MonoBehaviour
         var rectTransform = GetComponent<RectTransform>();
         rectTransform.sizeDelta = new Vector2(0, rectTransform.sizeDelta.y);
 
-        return energy;
+        var tmp = energy;
+        energy = 0;
+
+        return tmp;
     }
+
+
 }
