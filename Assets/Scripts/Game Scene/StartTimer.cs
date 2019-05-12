@@ -6,8 +6,6 @@ public class StartTimer: MonoBehaviour {
     // Start is called before the first frame update
     private void Start() {
         StartCoroutine(CountTimeCoroutine());
-        gameTimer.CountTime();
-        gameObject.SetActive(false);
 
         System.Collections.IEnumerator CountTimeCoroutine() {
             var startCounter = GetComponent<UnityEngine.UI.Text>();
@@ -15,6 +13,9 @@ public class StartTimer: MonoBehaviour {
                 startCounter.text = i.ToString();
                 yield return new WaitForSeconds(1f);
             }
+
+            gameTimer.CountTime();
+            gameObject.SetActive(false);
         }
     }
 }

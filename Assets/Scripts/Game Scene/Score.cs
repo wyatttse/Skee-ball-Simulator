@@ -2,7 +2,7 @@
 
 public class Score : MonoBehaviour
 {
-    private int score;
+    public int score { get; private set; }
 
     public void AddScore() {
         score += 10;
