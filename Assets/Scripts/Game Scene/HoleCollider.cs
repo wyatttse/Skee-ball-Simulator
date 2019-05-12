@@ -8,7 +8,7 @@ using UnityEngine;
 public class HoleCollider: MonoBehaviour {
     // static property allow setting the score for 2 holes in a cross-scenes manner.
     // scores[0] is for the big hole whereas scores[1] is for the small hole.
-    public static int[] scores = new int[2];
+    public static int[] scores = { 10, 30 };
     public GameManager gameManager;
     public string size;
 

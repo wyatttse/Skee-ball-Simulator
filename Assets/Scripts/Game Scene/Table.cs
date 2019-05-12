@@ -7,7 +7,7 @@ using UnityEngine;
 
 public class Table : MonoBehaviour
 {
-    public static int difficulty;
+    public static int difficulty = 1;
     private readonly int maxDistance = 3;
     private bool isLeft;
 
