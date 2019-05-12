@@ -2,8 +2,8 @@
 
 public class EnergyBar : MonoBehaviour
 {
+    public static float maxTime = 1f;
     private readonly float maxEnergy = 20f;
-    private readonly float maxTime = 1f;
     private Coroutine oldCoroutine;
     private float energy;
 
