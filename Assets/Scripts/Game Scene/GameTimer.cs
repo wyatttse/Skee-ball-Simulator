@@ -1,9 +1,14 @@
-﻿using UnityEngine;
+﻿/*
+ * Author: Tse Chi Ho
+ * Description: The script is used to count the time left to play the game.
+ */
+
+using UnityEngine;
 
 public class GameTimer : MonoBehaviour
 {
     public GameManager gameManager;
-    public static int duration = 30;
+    public static int duration = 30; // static property allow setting the duration in a cross-scenes manner
 
     public void CountTime() {
         StartCoroutine(CountTimeCoroutine());
@@ -16,6 +21,7 @@ public class GameTimer : MonoBehaviour
                 gameTimerText.text = "Time Left: " + i;
             }
 
+            // End the game when the time is up
             gameManager.EndGame();
         }
     }
