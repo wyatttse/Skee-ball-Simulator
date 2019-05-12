@@ -376,7 +376,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 182058353}
   m_LocalRotation: {x: -0.38268343, y: -0, z: -0, w: 0.92387956}
-  m_LocalPosition: {x: 0.002, y: 0.72, z: -0.01}
+  m_LocalPosition: {x: 0.002, y: 0.7, z: -0.03}
   m_LocalScale: {x: 0.75, y: 1.5, z: 0.10000001}
   m_Children: []
   m_Father: {fileID: 1652390544}
@@ -1725,6 +1725,25 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 1283228231}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1283228233 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6733635067991535839, guid: e17d46ee1661347c38e28b760fd42f51,
+    type: 3}
+  m_PrefabInstance: {fileID: 1283228231}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1283228234
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1283228233}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60ea00b29ff2e442f86812f516cd5a4c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneFade: {fileID: 1753970069}
 --- !u!1 &1339468229
 GameObject:
   m_ObjectHideFlags: 0
