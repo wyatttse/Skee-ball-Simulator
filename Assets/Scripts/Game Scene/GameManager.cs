@@ -6,8 +6,6 @@ public class GameManager : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     public EnergyBar energyBar;
     public GameObject BallPrefab;
     public Score score;
-    public GameObject HighestScore;
-    public GameObject LowScore;
     private Vector3 worldPosition;
 
     public void OnPointerDown(PointerEventData eventData) {
@@ -32,10 +30,6 @@ public class GameManager : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     }
 
     public void EndGame() {
-        var position = LoadSaveSystem.instance.Save(score.score);
-        if (position == 0)
-            HighestScore.SetActive(true);
-        else
-            LowScore.SetActive(true);
+
     }
 }

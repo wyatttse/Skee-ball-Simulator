@@ -6,6 +6,7 @@ public class GameTimer : MonoBehaviour
 
     public void CountTime() {
         StartCoroutine(CountTimeCoroutine());
+        gameManager.EndGame();
 
         System.Collections.IEnumerator CountTimeCoroutine() {
             var gameTimerText = GetComponent<UnityEngine.UI.Text>();
@@ -14,8 +15,6 @@ public class GameTimer : MonoBehaviour
                 yield return new WaitForSeconds(1f);
                 gameTimerText.text = "Time Left: " + i;
             }
-
-            gameManager.EndGame();
         }
     }
 }
