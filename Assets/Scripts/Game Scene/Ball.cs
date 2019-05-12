@@ -14,7 +14,7 @@ public class Ball : MonoBehaviour
         transform.position = position;
 
         var rigitBody = GetComponent<Rigidbody>();
-        rigitBody.mass = Random.Range(3f, 8f);
+        rigitBody.mass = Random.Range(5f, 10f);
         rigitBody.velocity = new Vector3(0, energy * Mathf.Sin(Mathf.PI / 6), energy * Mathf.Cos(Mathf.PI / 6));
     }
 
