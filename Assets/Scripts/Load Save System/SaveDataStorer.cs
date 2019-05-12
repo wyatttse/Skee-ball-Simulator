@@ -1,9 +1,7 @@
-﻿using UnityEngine;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
 [System.Serializable]
-public class SaveDataStorer : MonoBehaviour
-{
+public class SaveDataStorer {
     public List<int> scores = new List<int>(5);
     public static readonly int size = 5;
 
@@ -28,5 +26,5 @@ public class SaveDataStorer : MonoBehaviour
         return i;
     }
 
-    public int GetMax() { return scores[0]; }
+    public int GetMax() { return scores.Count == 0 ? 0 : scores[0]; }
 }
