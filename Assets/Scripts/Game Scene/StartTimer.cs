@@ -1,4 +1,9 @@
-﻿using UnityEngine;
+﻿/*
+ * Author: Tse Chi Ho
+ * Description: The script is used to count 3 seconds when the game begins.
+ */
+
+using UnityEngine;
 
 public class StartTimer: MonoBehaviour {
     public GameTimer gameTimer;
@@ -14,6 +19,7 @@ public class StartTimer: MonoBehaviour {
                 yield return new WaitForSeconds(1f);
             }
 
+            // Start to count down the time for the game
             gameTimer.CountTime();
             gameObject.SetActive(false);
         }

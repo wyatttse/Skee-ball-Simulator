@@ -1,4 +1,9 @@
-﻿using UnityEngine;
+﻿/*
+ * Author: Tse Chi Ho
+ * Description: The script is used to listen whether the player of Andriod press Back button to exit the game
+ */
+
+using UnityEngine;
 
 public class ExitListener : MonoBehaviour
 {

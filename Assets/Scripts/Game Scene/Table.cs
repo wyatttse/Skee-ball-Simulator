@@ -1,12 +1,16 @@
-﻿using UnityEngine;
+﻿/*
+ * Author: Tse Chi Ho
+ * Description: The script is used to move the table left and right according to "difficulty"
+ */
+
+using UnityEngine;
 
 public class Table : MonoBehaviour
 {
-    public static int difficulty;
+    public static int difficulty = 1;
     private readonly int maxDistance = 3;
     private bool isLeft;
 
-    // Update is called once per frame
     private void Update() {
         var position = transform.position;
         var distance = Time.deltaTime * difficulty;
@@ -16,6 +20,7 @@ public class Table : MonoBehaviour
         else
             transform.position = new Vector3(position.x + distance, position.y, position.z);
 
+        // Check whether the table moves over "maxDistance" and turn around
         if (position.x >= maxDistance)
             isLeft = true;
         else if (position.x <= -maxDistance)
