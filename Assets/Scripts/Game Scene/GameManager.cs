@@ -2,11 +2,11 @@
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class GameManager : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
-{
+public class GameManager: MonoBehaviour, IPointerDownHandler, IPointerUpHandler {
     public EnergyBar energyBar;
     public GameObject BallPrefab;
     public Transform PopUp;
+    public SceneFade sceneFade;
     private Vector3 worldPosition;
     private int score;
 
@@ -72,6 +72,5 @@ public class GameManager : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
             var LowScore = PopUp.Find("Low Score");
             LowScore.gameObject.SetActive(true);
         }
-
     }
 }
