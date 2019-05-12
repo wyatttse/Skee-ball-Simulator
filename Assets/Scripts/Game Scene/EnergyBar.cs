@@ -30,7 +30,10 @@ public class EnergyBar : MonoBehaviour
                     totalTime -= deltaTime;
                 }
 
-                energy = maxEnergy * totalTime / maxTime;
+                //energy = maxEnergy * totalTime / maxTime;
+
+                var a = -maxEnergy / Mathf.Pow(-maxTime, 2);
+                energy = a * Mathf.Pow(totalTime - maxTime, 2) + maxEnergy;
 
                 var rectTransform = GetComponent<RectTransform>();
                 rectTransform.sizeDelta = new Vector2(energy * 10, rectTransform.sizeDelta.y);
