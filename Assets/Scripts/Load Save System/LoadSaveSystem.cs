@@ -3,7 +3,7 @@
 public class LoadSaveSystem : MonoBehaviour
 {
     public static LoadSaveSystem instance { get; private set; }
-    private SaveDataStorer leaderBroad = new SaveDataStorer();
+    public SaveDataStorer leaderBroad { get; private set; } = new SaveDataStorer();
 
     private void Awake() {
         if (!instance) {
@@ -12,6 +12,10 @@ public class LoadSaveSystem : MonoBehaviour
         }
         else
             Destroy(gameObject);
+
+        var jsonString = PlayerPrefs.GetString("LeaderBroad");
+        if (!string.IsNullOrEmpty(jsonString))
+            leaderBroad = JsonUtility.FromJson<SaveDataStorer>(jsonString);
     }
 
     public int Save(int score) {

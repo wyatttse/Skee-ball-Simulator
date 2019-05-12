@@ -2,6 +2,9 @@
 
 public class SceneFade: MonoBehaviour {
 
+    private void Start() {
+        GetComponent<RectTransform>().sizeDelta = new Vector2(Screen.width, Screen.height);
+    }
 
     public void LoadScene(string sceneName) {
         StartCoroutine(LoadSceneCoroutine());
