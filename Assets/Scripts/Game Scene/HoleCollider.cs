@@ -2,9 +2,10 @@
 
 public class HoleCollider : MonoBehaviour
 {
-    public Score score;
+    public GameManager gameManager;
+    public int score;
 
     private void OnTriggerEnter(Collider other) {
-        score.AddScore();
+        gameManager.AddScore(score);
     }
 }
